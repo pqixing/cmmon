@@ -1,0 +1,52 @@
+<!--group 配置模板   <group name="Captain">$project/$module</group>-->
+<!--project 配置模板   <project name="Captain" url="git@gitlab.gz.cvte.cn:robot_application/external_sdk/Captain.git" $module>$module</project>-->
+<!--module 配置模板    <module name="app" alias="alias" desc="this:* is project" external="false" api="this:*/module:version" merge="../build.gradle" type="application/library/document/java" version="+" transform="true">$compile</module>-->
+<!--compile 配置模板   <compile/devCompile name="branch:name:+" scope="api" justApi="false" excludes="group:module,group:module"/>-->
+<!--    mavenUrl="/Users/pqx/Desktop/test/.repo"-->
+<!--    mavenUrl="https://dl.bintray.com/pqixing86/modularization"-->
+
+<manifest baseUrl="https://github.com/pqixing"
+    baseVersion="0.3"
+    basicUrl="https://github.com/pqixing/basic.git"
+    createSrc="true"
+    fallbacks="master"
+    groupId="com.pqx.android" mavenPsw="123"
+    mavenUrl="https://dl.bintray.com/pqixing86/px"
+    mavenUser="pqx">
+
+    <foreach exclude="common_api">
+        <compile name="common_api:+" />
+    </foreach>
+
+    <files>
+
+        <item name="upload" file="$basicDir/gradle/upload.gradle" />
+        <item name="external" file="../build.gradle" />
+
+        <item name="document" file="" />
+        <item name="root" file="$basicDir/build.gradle,build.gradle,$upload" />
+        <item name="java" file="$basicDir/gradle/java.gradle,build.gradle,$upload" />
+        <item name="common" file="$basicDir/gradle/kotlin.gradle,$$upload,build.gradle" />
+        <item name="library" file="$basicDir/gradle/android.gradle,$basicDir/gradle/library.gradle,$common" />
+        <item name="application" file="$basicDir/gradle/android.gradle,$basicDir/gradle/application.gradle,$common" />
+    </files>
+
+
+    <project name="px" desc="组件化框架">
+        <module name="tools" desc="通用工具类" type="java" />
+        <module name="annotation" desc="基础注解" type="java" />
+        <module name="module" desc="gradle插件模块" type="java">
+            <compile name="tools" />
+            <compile name="annotation" />
+        </module>
+        <module name="studio" desc="AS插件模块" type="java">
+            <compile name="tools" />
+            <compile name="annotation" />
+        </module>
+
+    </project>
+
+    <project name="cmmon" desc="通用模块">
+
+    </project>
+</manifest>

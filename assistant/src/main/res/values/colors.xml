@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="lighter_gray">#ddd</color>
+    <color name="btn_bg">#ddd</color>
+    <color name="half_translate">#ddffffff</color>
+    <color name="btn_bg_select">#ccc</color>
+    <color name="ui_bg">@android:color/white</color>
+    <color name="color_ui_text">@android:color/black</color>
+    <color name="color_ui_text_hint">@android:color/darker_gray</color>
+    <color name="color_ui_line">@android:color/darker_gray</color>
+    <color name="color_status_bar">#3000</color>
+</resources>

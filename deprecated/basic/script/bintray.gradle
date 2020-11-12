@@ -1,0 +1,76 @@
+// backup of [https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle]
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+//打包的相关信息， 由插件进行填充
+def mavenInfo = px.maven
+// Bintray
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+if (project != rootProject) {
+    project.bintrayUpload.dependsOn("build")
+}
+project.bintrayUpload.dependsOn("generatePomFileForPxPublication")
+
+version = mavenInfo.version
+group = mavenInfo.groupId
+
+publishing {
+    publications {
+        px(MavenPublication) {
+            groupId mavenInfo.groupId
+            artifactId mavenInfo.artifactId
+            version mavenInfo.version
+        }
+    }
+}
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    publications = ['px']
+    pkg {
+        repo = bintrayRepo//自己创建的仓库名字
+        name = mavenInfo.artifactId//上传到JCenter的名字,最终引用的名字 compile 'com.piano.demolib:1.0.0'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+        publish = true // 是否是公开项目，公开别人可以引用
+        version {
+            name = mavenInfo.version
+            desc = mavenInfo.getLog()
+            released = new Date()
+            vcsTag = "v${mavenInfo.version}"
+        }
+    }
+}
+
+//设置上传文件
+if (mavenInfo.artifactFile != null) {
+    artifacts.archives mavenInfo.artifactFile
+} else {
+    //上传源码到仓库
+    if (project.hasProperty("android")) { // Android libraries
+        task sourcesJar(type: Jar) {
+            classifier = 'sources'
+            from android.sourceSets.main.java.srcDirs
+        }
+        artifacts.archives sourcesJar
+    } else if (project.hasProperty("java")) { // Java libraries
+        task sourcesJar(type: Jar, dependsOn: classes) {
+            classifier = 'sources'
+            from sourceSets.main.allSource
+        }
+        artifacts.archives sourcesJar
+    }
+}
+//↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+//class MavenModel {
+//    var mavenUrl: String = ""
+//    var groupId: String = ""
+//    var artifactId: String = ""
+//    var mavenUser: String = ""
+//    var mavenPsw: String = ""
+//    var version: String = ""
+//    var uploadTask: String = "uploadArchives"
+//    var lastRev: RevCommit? = null
+//    var artifactFile: File? = null
+//    fun mavenUri(): URI = mavenUrl.let { URI(if (it.startsWith("http")) it else "file:/$it") }
+//    fun getLog() = "${Keys.PREFIX_LOG}?hash=${lastRev?.name}&commitTime=${lastRev?.commitTime}&message=${lastRev?.fullMessage}}"
+//}
+
+//获取maven信息，可使用数据如上
+def mavenInfo = px.maven
+boolean bintray = mavenInfo.mavenUrl.contains("dl.bintray.com")
+
+//根据MavenUrl来控制，是使用本地还是Jcenter
+mavenInfo.uploadTask = bintray ? "bintrayUpload" : "uploadArchives"
+apply from: "${rootDir.absolutePath}/basic/script/${bintray ? "bintray" : "maven"}.gradle"

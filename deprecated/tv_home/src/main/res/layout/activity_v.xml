@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#666"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <SeekBar
+            android:id="@+id/sbAlpha"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="10dp" 
+            android:max="255"
+            android:progress="255" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Alpha:"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/sbRed"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/sbAlpha"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="10dp" 
+            android:max="255"
+            android:progress="255" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/sbAlpha"
+            android:gravity="center"
+            android:text="Red:"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/sbGreen"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/sbRed"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="10dp" 
+            android:max="255"
+            android:progress="255" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/sbRed"
+            android:gravity="center"
+            android:text="Green:"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/sbBlue"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/sbGreen"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="10dp" 
+            android:max="255"
+            android:progress="255" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/sbGreen"
+            android:gravity="center"
+            android:text="Blue:"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etBackGroup"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:hint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnShareBg"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="分享" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etShareContent"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入要分享的文本"
+        android:maxLines="8"
+        android:minLines="4"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnShareContent"
+        android:layout_width="100dp"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="分享" />
+
+</LinearLayout>

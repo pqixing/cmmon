@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ui_bg">@android:color/black</color>
+    <color name="color_ui_text">@color/lighter_gray</color>
+    <color name="color_ui_text_hint">@android:color/darker_gray</color>
+    <color name="color_ui_line">@android:color/darker_gray</color>
+    <color name="color_status_bar">#00000000</color>
+    <color name="half_translate">#dd000000</color>
+    <color name="btn_bg_select">#555</color>
+</resources>

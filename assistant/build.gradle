@@ -1,0 +1,21 @@
+
+android {
+    defaultConfig {
+        applicationId "com.pqixing.shellexe"
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.room:room-runtime:2.3.0-alpha01'
+    annotationProcessor 'androidx.room:room-compiler:2.3.0-alpha01'
+    api 'com.github.stuxuhai:jpinyin:1.1.7'
+    api "androidx.recyclerview:recyclerview:1.1.0"
+
+}

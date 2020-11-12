@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">X空间</string>
+    <string name="list_default">默认</string>
+    <string name="list_user">用户</string>
+    <string name="list_system">系统</string>
+
+    <string name="sp_name_list">AppList</string>
+    <string name="sp_key_entry">entry</string>
+    <string name="onceList">onceList</string>
+    <string name="list_exclude">exclude</string>
+    <string name="hint_search">搜索应用</string>
+    <string name="history_search">more</string>
+    <string name="full_screen">全屏显示</string>
+    <string name="float_model">悬浮</string>
+    <string name="full_screen_touch">全面屏手势</string>
+    <string name="hint_input_title">输入空间名称</string>
+    <string name="hint_input_filter">输入正则匹配</string>
+    <string name="horizontal_mode">横屏</string>
+    <string name="_new">创建</string>
+    <string name="config">配置</string>
+    <string name="filter">过滤</string>
+    <string name="name">name</string>
+    <string name="fh">:</string>
+    <string name="enable">enable</string>
+    <string name="_true">true</string>
+    <string name="_false">false</string>
+    <string name="_all">all</string>
+    <string name="system">system</string>
+    <string name="exclude">exclude</string>
+    <string name="packageName">pkg</string>
+    <string name="invert">反选</string>
+    <string name="pass">禁锢</string>
+    <string name="exit">退出</string>
+    <string name="_launch">launch</string>
+</resources>

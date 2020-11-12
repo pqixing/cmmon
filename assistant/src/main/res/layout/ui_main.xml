@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/flTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="1px"
+        android:layout_weight="1">
+
+        <GridView
+            android:id="@+id/gvAppList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/half_translate"
+            android:numColumns="5"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lvMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/half_translate"
+        android:padding="4dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_ui_line" />
+
+    <com.pqixing.space.ui.ClearEditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/half_translate"
+        android:gravity="center_vertical"
+        android:hint="@string/hint_search"
+        android:imeOptions="actionSearch"
+        android:inputType="textEmailAddress"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:singleLine="true"
+        android:textColor="@color/color_ui_text"
+        android:textColorHint="@color/color_ui_text_hint" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_ui_line" />
+
+    <LinearLayout
+        android:id="@+id/llOpContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/half_translate"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/cbHorizontalMode"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:text="@string/horizontal_mode"
+            android:textColor="@color/color_ui_text" />
+
+
+        <Button
+            android:id="@+id/cbFloatMode"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:text="@string/float_model"
+            android:textColor="@color/color_ui_text"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnConfig"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:text="@string/config"
+            android:textColor="@color/color_ui_text" />
+
+        <Button
+            android:id="@+id/btnNew"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:text="@string/_new"
+            android:textColor="@color/color_ui_text" />
+
+        <Button
+            android:id="@+id/ivDone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:text="@string/pass" />
+    </LinearLayout>
+</LinearLayout>
